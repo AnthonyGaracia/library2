@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation} from "react-router-dom"
 
 const Navigations = ({user}) => {
+    const location = useLocation()
+    const {pathname} = location
     
     
     return (
         <nav>
-            <Link to='/books'>Books</Link>
+            <Link to='/books' className={pathname === "/books" ? "selected" : ""}>Books</Link>
             {
                 user.email ? (
                     <span>
@@ -15,8 +17,8 @@ const Navigations = ({user}) => {
                 ) : (
                     
                     <span>
-                        <Link to="/login">Login</Link>
-                        <Link to='/register'>Register</Link>
+                        <Link to='/login' className={pathname === "/login" ? "selected" : ""}>Login</Link>
+                        <Link to='/register' className={pathname === "/register" ? "selected" : ""}>Register</Link>
                     </span>
                 )
             }

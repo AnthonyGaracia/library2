@@ -1,6 +1,6 @@
 body {
-  font-family: Georgia, serif;
-  background-color: #f8f8f8;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: whitesmoke;
   margin: 0;
   padding: 0;
 }
@@ -10,12 +10,18 @@ body {
   margin-right: 10px;
 }
 
+.selected {
+  border: 1.5px solid whitesmoke;
+
+}
+
 /* Add your own custom styles here */
 
 nav{
   display: flex;
   justify-content: space-around;
-  background-color: lightgreen;
+  background-color: lightskyblue;
+  
 }
 
 nav span{
@@ -24,7 +30,10 @@ nav span{
 }
 
 nav a{
+  color: navy;
   padding: 1rem;
+  text-decoration: none;
+  
 }
 
 .registerForm {
