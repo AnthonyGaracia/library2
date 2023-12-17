@@ -8,6 +8,7 @@ const Navigations = ({user}) => {
     return (
         <nav>
             <Link to='/books' className={pathname === "/books" ? "selected" : ""}>Books</Link>
+            <Link to='/about' className={pathname === "/about" ? "selected" : ""}>About</Link>
             {
                 user.email ? (
                     <span>

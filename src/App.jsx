@@ -10,6 +10,8 @@ import Account from './components/Account'
 import SuccessRegi from './components/SuccessRegi'
 import Homepage from './components/Homepage'
 import SingleBook from './components/SingleBook'
+import LibraryForm from './components/LibraryForm'
+import About from './components/About'
 
 
 function App() {
@@ -29,10 +31,15 @@ function App() {
     const fetchBooks = async() => {
       const {data} = await axios.get('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books')
       setBooks(data.books)
-      console.log(data.books)
+      
     }
     fetchBooks() 
   },[])
+
+  const create = async (newSearch) => {
+    const {data} = await axios.post ('https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api/books', newSearch)
+    console.log(response)
+  }
 
 
   useEffect(() => {
@@ -69,6 +76,7 @@ function App() {
       <Route path='/successReg' element={<SuccessRegi />}/>
       <Route path='/books' element={<Books books={books}/>}/>
       <Route path='/books/:id' element={<SingleBook books={books}/>}/>
+      <Route path='/about' element={<About/>}/>
       <Route path='/login' element={<Login setUser={setUser} setToken={setToken}/>}/>
       <Route path='/register' element={<Register />}/>
       <Route path='/account' element={<Account user={user} setUser={setUser} setToken={setToken}/>}/>

@@ -22,6 +22,10 @@ const Account = ({user, setUser, setToken }) => {
             <hr/>
             <h2>Email: {user.email}</h2>
             <h4>This could be a good place to show checked out books...</h4>
+            <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB-fXBsTHoBc2xLSDR901qs5uArpIu67FCM2Z5j7vObVT3g8HYDgoOUa2l3CK6fe0FbWA&usqp=CAU"
+            alt="dancing book"
+            />
             
             
            
