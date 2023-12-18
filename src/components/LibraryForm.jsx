@@ -4,14 +4,11 @@ const LibraryForm = ({create}) => {
     const [title, setTitle] = useState('')
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(name)
         const newSearch = {
-            name
+            title
         }
         create(newSearch)
-        
-
-    }
+        }
     return(
         <div>
             <form onSubmit={handleSubmit}>

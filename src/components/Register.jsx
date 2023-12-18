@@ -70,6 +70,10 @@ const Register = () => {
             {
                 error ? <p>{error}</p> : null
             }
+            <img className="lib"
+            src="https://www.cloviscollege.edu/_uploaded-files/_images/student-services/library/indexpage_library_banner_web.jpg"
+            alt="library"
+            />
         </div>
     )
 

@@ -11,19 +11,19 @@ body {
 }
 
 .selected {
-  border: 2px solid yellow;
+  border: 2px solid whitesmoke;
 
 }
 .lib{
-  width: 800px;
-  height: 400px;
-  background-color: lightskyblue;
-  
+height: auto;
+max-width: 100%;
+padding-top: 1rem;
 }
 .lib2{
   width: 200px;
   height: 200px;
 }
+
 
 /* Add your own custom styles here */
 
