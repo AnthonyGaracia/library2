@@ -1,27 +1,35 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
-const LibraryForm = ({create}) => {
-    const [title, setTitle] = useState('')
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        const newSearch = {
-            title
-        }
-        create(newSearch)
-        }
+const LibraryForm = ({books}) => {
+    const [searchTitle, setSearchTitle] = useState('')
+    const filterTitle = books.filter((book) => {
+        return book.title.toLowerCase().indexOf(searchTitle.toLowerCase())!== -1
+    })
+        
+        
     return(
+    
         <div>
-            <form onSubmit={handleSubmit}>
+        
             <label>
-                Title:
-                <input
-                    type="text"
-                    value={title}
-                    onChange={(event) => {setTitle(event.target.value)}}
-                />
+                <input type="text" value={searchTitle} onChange={(event) => {setSearchTitle(event.target.value)}}></input>
             </label>
-            <button type="submit">Submit</button>
-            </form>
+            {
+                searchTitle.length > 0?
+                <div>
+                    <h3>(Viewing {filterTitle.length} books of {books.length})</h3>
+                    <ul>
+                        {filterTitle.map((book) =>
+                        {
+                            return <li key={book.id}> <Link to={`/books/${book.id}`}>{book.title}</Link></li>
+                        }
+                        )}
+                    </ul>
+
+                </div>
+                :null
+            }
         </div>
     )
 

@@ -1,14 +1,17 @@
-import { useParams } from "react-router-dom"
+import LibraryForm from './LibraryForm'
 import { Link } from 'react-router-dom'
 
 
 const Books = ({books}) => {
-    const params = useParams()
-    const id = params.id*1
+   
 
   return(
         <div>
             <h1>Books</h1>
+            <div>
+            <p>Search Book</p>
+            <LibraryForm books = {books}/>
+         </div>
          
              <ul>
                 {
@@ -18,6 +21,11 @@ const Books = ({books}) => {
                                 <Link to={`/books/${book.id}`}>
                                 {book.title}
                                 </Link>
+                              <div>
+                                {
+                                    book.available === true ? "available":"unavailable"
+                                }
+                              </div>
                                 
                                 </li>
                         )
